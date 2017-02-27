@@ -1,0 +1,54 @@
+[
+  {
+    "category": "frontend",
+    "entries": [
+      {
+        "name": "Vuejs",
+        "progress": "30%"
+      },
+      {
+        "name": "jQuery",
+        "progress": "30%"
+      }
+    ]
+  },
+  {
+    "category": "backend",
+    "entries": [
+      {
+        "name": "RoR",
+        "progress": "30%"
+      }
+    ]
+  },
+  {
+    "category": "language",
+    "entries": [
+      {
+        "name": "C/C++",
+        "progress": "30%"
+      },
+      {
+        "name": "Ruby",
+        "progress": "30%"
+      },
+      {
+        "name": "Python",
+        "progress": "30%"
+      },
+      {
+        "name": "Javascript",
+        "progress": "30%"
+      }
+    ]
+  },
+  {
+    "category": "misc",
+    "entries": [
+      {
+        "name": "linux",
+        "progress": "30%"
+      }
+    ]
+  }
+]
