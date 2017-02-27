@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <app-nav></app-nav>
+    <app-content></app-content>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import Nav from './components/nav.vue'
+import Content from './components/content.vue'
+import Footer from './components/footer.vue'
 
 export default {
   name: 'app',
   components: {
-    Hello
+    'app-nav': Nav,
+    'app-content': Content,
+    'app-footer': Footer
   }
 }
 </script>
 
 <style>
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  font-size: 20px;
+  height: 100%;
 }
 </style>
