@@ -1,5 +1,5 @@
 <template>
-  <article id="intro" class="reigion">
+  <article id="intro" class="region">
     <header>關於我</header>
     <section>
       <pre>{{ this.content }}</pre>
