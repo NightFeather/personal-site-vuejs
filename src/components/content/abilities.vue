@@ -1,5 +1,5 @@
 <template>
-  <article id="ability" class="reigion">
+  <article id="ability" class="region">
     <header>能力</header>
     <section>
       <skillbar-group v-for="skillgroup in skill_list" v-bind:skillgroup="skillgroup" ></skillbar-group>

@@ -4,11 +4,13 @@
     "entries": [
       {
         "name": "Vuejs",
-        "progress": "30%"
+        "progress": "30%",
+        "desc": "就是這個網頁，正嘗試在別的作品上使用 router"
       },
       {
         "name": "jQuery",
-        "progress": "30%"
+        "progress": "30%",
+        "desc": "超泛用的工具，會用來在網頁上自動做些操作"
       }
     ]
   },
@@ -17,7 +19,8 @@
     "entries": [
       {
         "name": "RoR",
-        "progress": "30%"
+        "progress": "50%",
+        "desc": "能操作基本架構，努力學習模組化"
       }
     ]
   },
@@ -26,19 +29,28 @@
     "entries": [
       {
         "name": "C/C++",
-        "progress": "30%"
+        "progress": "30%",
+        "desc": "能看懂基本語法，不過大抵上還是在類似 C 的語法，用到 C++ 的特性"
       },
       {
         "name": "Ruby",
-        "progress": "30%"
+        "progress": "50%",
+        "desc": "主要使用的語言，會用他來包裝一些常用操作成腳本"
       },
       {
         "name": "Python",
-        "progress": "30%"
+        "progress": "30%",
+        "desc": "當初為了修正 Sublime Text 3 套件開始接觸，現在能看懂別人的 code 和除錯"
+      },
+      {
+        "name": "Lua",
+        "progress": "35%",
+        "desc": "為了寫 AwesomeWM 設定而開始學習的語言"
       },
       {
         "name": "Javascript",
-        "progress": "30%"
+        "progress": "40%",
+        "desc": "從瀏覽器的開發人員工具開始學，網頁操作到 nodejs 都有涉獵"
       }
     ]
   },
@@ -47,7 +59,8 @@
     "entries": [
       {
         "name": "linux",
-        "progress": "30%"
+        "progress": "30%",
+        "desc": "目前主要使用的作業系統，能用指令完成大部份事情。"
       }
     ]
   }

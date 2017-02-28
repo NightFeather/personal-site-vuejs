@@ -1,10 +1,10 @@
 <template>
-  <div class="skillbar">
+  <div class="skillbar" :title="skillbar.desc">
     <div class="lengend">
       <p>{{ skillbar.name }}</p>
     </div>
     <div class="gauge" :data-progress="skillbar.progress">
-      <div class="inner" :style="{ width: skillbar.progress }"></div>
+    <div class="inner" :style="{ width: skillbar.progress }"></div>
     </div>
   </div>
 </template>
@@ -20,14 +20,14 @@ export default {
 .skillbar {
 
   display: flex;
-
-  width: 50vw;
   height: 2em;
+  width: 50vw;
   margin: 5px 0px;
 
   * { height: 100%; }
 
   .lengend {
+    position: relative;
     width: 20%;
     text-align: center;
     border-radius: 3px 0px 0px 3px;
@@ -36,13 +36,15 @@ export default {
       height: 1em;
       margin: 0;
       padding: 0.5em 0;
+      color: #eee;
     }
+
   }
   .gauge  {
     position: relative;
     width: 80%;
     border-radius: 0px 3px 3px 0px;
-    background-color: rgba(250,250,250,0.3);
+    background-color: rgba(175,175,175,0.3);
 
     &::after {
       position: absolute;
@@ -53,17 +55,20 @@ export default {
 
     .inner {
       height: 100%;
+      width: 0%;
     }
+
   }
 
-  &:nth-child(4n+0) > .lengend {background-color: #2e94b9; }
-  &:nth-child(4n+1) > .lengend {background-color: #fffdc1; }
-  &:nth-child(4n+2) > .lengend {background-color: #f0b775; }
-  &:nth-child(4n+3) > .lengend {background-color: #fd5959; }
+  &:nth-child(odd) {
+    & > .lengend        { background-color: #34699a; }
+    & > .gauge > .inner { background-color: #408ab4; }
+  }
 
-  &:nth-child(4n+0) > .gauge > .inner  {background-color: #0189ba; }
-  &:nth-child(4n+1) > .gauge > .inner  {background-color: #f9f58b; }
-  &:nth-child(4n+2) > .gauge > .inner  {background-color: #eca451; }
-  &:nth-child(4n+3) > .gauge > .inner  {background-color: #fb3a3a; }
+  &:nth-child(even) {
+    & > .lengend        { background-color: #643579; }
+    & > .gauge > .inner { background-color: #bb99cd; }
+  }
+
 }
 </style>
