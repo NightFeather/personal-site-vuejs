@@ -1,22 +1,16 @@
 <template>
   <div id="app">
-    <app-nav></app-nav>
     <app-content></app-content>
-    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import Nav from './components/nav.vue'
 import Content from './components/content.vue'
-import Footer from './components/footer.vue'
 
 export default {
   name: 'app',
   components: {
-    'app-nav': Nav,
-    'app-content': Content,
-    'app-footer': Footer
+    'app-content': Content
   }
 }
 </script>

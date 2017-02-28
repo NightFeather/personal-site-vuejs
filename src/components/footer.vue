@@ -13,7 +13,8 @@
 <style lang="scss">
   #footer {
     height: 10vh;
-    background-color: #55a;
+    background-color: #495664;
     font-size: 20px;
+    color: #f8fceb;
   }
 </style>

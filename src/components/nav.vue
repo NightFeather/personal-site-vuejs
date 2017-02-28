@@ -1,7 +1,7 @@
 <template>
 	<div id="nav">
     <div id='title'>
-      喵
+      Nightfeather
     </div>
     <div class="link-list">
       <ul>
@@ -23,7 +23,7 @@ export default {
 <style lang="scss">
   #nav {
     position: fixed;
-    background-color: #222;
+    background-color: #495664;
     height: 5vh;
     width: 100%;
     font-size: 2vh;
@@ -51,7 +51,7 @@ export default {
         padding: 0px;
 
         li {
-          background-color: #555;
+          background-color: #333c4a;
           width: 10em;
 
           a {
