@@ -1,6 +1,6 @@
 <template>
 	<div id="content" >
-    <content-profile></content-profile>
+    <content-greeting></content-greeting>
     <content-intro></content-intro>
     <content-ability></content-ability>
     <content-github-repos></content-github-repos>
@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Profile from './content/profile.vue'
-import Intro from './content/introduction.vue'
+import Greeting from './content/greeting.vue'
+import Intro from './content/intro.vue'
 import Ability from './content/abilities.vue'
 import GitHubRepos from './content/github-repos.vue'
 import Contact from './content/contact.vue'
@@ -18,7 +18,7 @@ import Contact from './content/contact.vue'
 export default {
   name: 'app-content',
   components: {
-    'content-profile': Profile,
+    'content-greeting': Greeting,
     'content-intro': Intro,
     'content-ability': Ability,
     'content-github-repos': GitHubRepos,

@@ -1,12 +1,15 @@
 <template>
-  <article id="profile" class="region">
+  <article id="greeting" class="region">
     <section class="avatar">
       <img src="https://avatars3.githubusercontent.com/u/4570441" />
     </section>
     <section class="detail">
       <article>
-        <header class="name">Nightfeather</header>
         <section>
+          <ul>
+            <li>你好</li>
+            <li>我是 Nightfeather</li>
+          </ul>
         </section>
       </article>
     </section>
@@ -15,19 +18,18 @@
 
 <script>
 export default {
-  name: 'content-profile'
+  name: 'content-greeting'
 }
 </script>
 
 <style lang="scss">
-#profile {
+#greeting {
   display: flex;
   justify-content: center;
-  padding-top: 5vh !important;
+  align-items: center;
 
   .avatar {
     width: 25vw;
-    padding: 0 5vw 5vh 5vw;
     img {
       max-width: 15vw;
       border-radius: 5px;
@@ -35,16 +37,11 @@ export default {
   }
 
   .detail {
-    width: 30vw;
+    width: 40vw;
     text-align: left;
-    .name {
-      font-size: 40px;
-      font-weight: 700;
-    }
     ul {
       list-style: none;
       padding: 0;
-      font-size: 30px;
     }
   }
 }

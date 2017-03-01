@@ -2,7 +2,7 @@
   <article id="intro" class="region">
     <header>關於我</header>
     <section>
-      <pre>{{ this.content }}</pre>
+      <pre v-html="this.content"></pre>
     </section>
   </article>
 </template>
@@ -21,5 +21,8 @@ export default {
 </script>
 
 <style lang='scss'>
-  #intro { background-color: #a55; }
+.fade {
+  color: lightgrey;
+}
+
 </style>
