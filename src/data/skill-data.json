@@ -61,6 +61,11 @@
         "name": "Linux",
         "progress": "30%",
         "desc": "目前主要使用的作業系統，能用指令完成大部份事情。"
+      },
+      {
+        "name": "git",
+        "progress": "50%",
+        "desc": "基本的 commit 到 branch 操作，目前致力於寫出更有意義的 commit message 和改善使用習慣"
       }
     ]
   }
