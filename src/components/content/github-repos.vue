@@ -3,17 +3,20 @@
   <header>GitHub 最近有活動的專案</header>
   <section>
     <list-table v-show="this.loaded" v-bind:header="header" v-bind:items="items"></list-table>
+    <cat-loading v-show="!this.loaded"></cat-loading>
   </section>
 </article>
 </template>
 
 <script>
 import ListTable from '@/components/list-table.vue'
+import CatLoading from '@/components/CatLoading.vue'
 
 export default {
   name: 'github-repos',
   components: {
-    ListTable
+    ListTable,
+    CatLoading
   },
   data: function () {
     return {
