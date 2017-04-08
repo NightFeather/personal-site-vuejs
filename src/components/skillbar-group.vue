@@ -9,7 +9,7 @@
 
 <script>
   import StringHelper from '@/mixins/string-helper.js'
-  import Skillbar from './Skillbar'
+  import Skillbar from './skillbar'
 
   export default {
     name: 'skillbar-group',

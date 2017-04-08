@@ -9,7 +9,7 @@
 
 <script>
 import SkillData from '@/data/skill-data.json'
-import SkillbarGroup from '@/components/SkillbarGroup'
+import SkillbarGroup from '@/components/skillbar-group'
 
 export default {
   name: 'content-ability',
