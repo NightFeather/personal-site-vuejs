@@ -3,7 +3,7 @@
   <header>GitHub 最近有活動的專案</header>
   <section>
     <div v-show="this.error" class="error" >Error Fetching Data</div>
-    <card-wall v-show="this.loaded && !this.error" v-bind:repos="repos"></card-wall>
+    <github-card-wall v-show="this.loaded && !this.error" v-bind:repos="repos"></github-card-wall>
     <cat-loading v-show="!this.loaded"></cat-loading>
   </section>
 </article>
@@ -11,12 +11,12 @@
 
 <script>
 import CatLoading from '@/components/cat-loading.vue'
-import CardWall from './github-repos/card-wall.vue'
+import GitHubCardWall from './github-repos/card-wall.vue'
 
 export default {
   name: 'github-repos',
   components: {
-    CardWall,
+    'github-card-wall': GitHubCardWall,
     CatLoading
   },
   data: function () {

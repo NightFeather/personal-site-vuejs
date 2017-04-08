@@ -23,7 +23,7 @@
 <script>
 import StringHelper from '@/mixins/string-helper.js'
 export default {
-  name: 'card',
+  name: 'github-card',
   props: ['repo'],
   mixins: [ StringHelper ]
 }
@@ -34,7 +34,6 @@ export default {
   margin: 5px;
   padding: 0.5em;
   width: 15em;
-  height: 11em;
   box-sizing: border-box;
 
   background-color: #eee;

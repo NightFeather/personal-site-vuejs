@@ -1,17 +1,17 @@
 <template>
 <ul class="card-wall">
-  <card v-for="repo in repos" v-bind:repo="repo">
-  </card>
+  <github-card v-for="repo in repos" v-bind:repo="repo">
+  </github-card>
 </ul>
 </template>
 
 <script>
-import Card from './card.vue'
+import GitHubCard from './card.vue'
 
 export default {
-  name: 'card-wall',
+  name: 'github-card-wall',
   props: ['repos'],
-  components: { Card }
+  components: { 'github-card': GitHubCard }
 }
 </script>
 
