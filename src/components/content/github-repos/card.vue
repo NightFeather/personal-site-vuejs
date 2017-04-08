@@ -4,8 +4,14 @@
       <a target="_blank" :href="repo.link" :title="repo.name">
         <div class="title">{{repo.name | truncate(28)}}</div>
       </a>
+      <div v-if="repo.fork" class="fork">forked from: {{ repo.parent }}</div>
       <div class="desc">{{repo.desc}}</div>
-      <div class="updated_at">Last Modified: {{repo.updated_at}}</div>
+      <div v-if="repo.topics" class="topics">
+        <ul>
+          <li v-for="topic in repo.topics"></li>
+        </ul>
+      </div>
+      <div class="updated_at">Last Modified: {{repo.updated_at | xmlTime}}</div>
     </div>
 </li>
 </template>
@@ -22,7 +28,7 @@ export default {
 <style lang='scss'>
 .card {
   margin: 5px;
-  padding: 0.3em;
+  padding: 0.5em;
   width: 15em;
   box-sizing: border-box;
 
@@ -37,6 +43,12 @@ export default {
     .title {
       color: black;
       font-size: 1.1em;
+    }
+    .fork {
+      font-size: 0.5em;
+      &:before {
+        content: '\21B3 ';
+      }
     }
     .desc {
       min-height: 6em;

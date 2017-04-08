@@ -2,7 +2,8 @@
 <article id="github-repos" class="region">
   <header>GitHub 最近有活動的專案</header>
   <section>
-    <card-wall v-show="this.loaded" v-bind:repos="repos"></card-wall>
+    <div v-show="this.error" class="error" >Error Fetching Data</div>
+    <card-wall v-show="this.loaded && !this.error" v-bind:repos="repos"></card-wall>
     <cat-loading v-show="!this.loaded"></cat-loading>
   </section>
 </article>
@@ -21,7 +22,8 @@ export default {
   data: function () {
     return {
       repos: [],
-      loaded: false
+      loaded: false,
+      error: false
     }
   },
   mounted: function () {
@@ -36,23 +38,53 @@ export default {
       }
     ).then(
       (resp) => {
-        var repos = resp.data.slice(0, 5)
-        repos = repos.map((item) => {
+        var repos = resp.data.slice(0, 9).map((repo) => {
           return {
-            link: item.html_url,
-            name: item.name,
-            full_name: item.full_name,
-            desc: item.description,
-            updated_at: xmlTime(item.updated_at)
+            link: repo.html_url,
+            name: repo.name,
+            full_name: repo.full_name,
+            desc: repo.description,
+            updated_at: repo.updated_at
           }
         })
 
-        self.repos = repos
-        self.loaded = true
+        Promise.all(repos.map((repo) => {
+          return self.$http.get(
+            'https://api.github.com/repos/' + repo.full_name,
+            {
+              before: function (req) {
+                req.headers.set('Accept',
+                  'application/vnd.github.mercy-preview+json, ' + req.headers.get('Accept'))
+                return req
+              }
+            }
+          ).then(
+            (res) => {
+              res = res.data
+              repo.status = 'success'
+              repo.fork = res.fork
+              repo.topics = res.topics
+              if (res.fork) { repo.parent = res.parent.full_name }
+              return repo
+            },
+            (err) => {
+              return {
+                status: 'failure',
+                error: err
+              }
+            }
+          )
+        })).then((res) => {
+          console.log(res)
+          self.repos = res.filter((i) => { return i.status === 'success' })
+          self.loaded = true
+        })
       }
     ).catch(
       (resp) => {
         console.log(resp)
+        self.loaded = true
+        self.error = true
       }
     )
   }
