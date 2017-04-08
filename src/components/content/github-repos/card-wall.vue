@@ -1,9 +1,7 @@
 <template>
 <ul class="card-wall">
-  <li v-for="repo in repos">
-    <card v-bind:repo="repo">
-    </card>
-  </li>
+  <card v-for="repo in repos" v-bind:repo="repo">
+  </card>
 </ul>
 </template>
 
@@ -26,6 +24,8 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-flow: row wrap;
+  align-items: stretch;
 
   line-height: 1.2em;
 }

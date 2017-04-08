@@ -64,7 +64,11 @@ export default {
               repo.status = 'success'
               repo.fork = res.fork
               repo.topics = res.topics
-              if (res.fork) { repo.parent = res.parent.full_name }
+              if (res.fork) {
+                repo.parent = {}
+                repo.parent.name = res.parent.full_name
+                repo.parent.link = res.parent.html_url
+              }
               return repo
             },
             (err) => {
@@ -75,7 +79,6 @@ export default {
             }
           )
         })).then((res) => {
-          console.log(res)
           self.repos = res.filter((i) => { return i.status === 'success' })
           self.loaded = true
         })
