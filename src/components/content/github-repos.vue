@@ -2,28 +2,24 @@
 <article id="github-repos" class="region">
   <header>GitHub 最近有活動的專案</header>
   <section>
-    <list-table v-show="this.loaded" v-bind:header="header" v-bind:items="items"></list-table>
+    <card-wall v-show="this.loaded" v-bind:header="header" v-bind:items="items"></card-wall>
     <cat-loading v-show="!this.loaded"></cat-loading>
   </section>
 </article>
 </template>
 
 <script>
-import ListTable from '@/components/list-table.vue'
 import CatLoading from '@/components/CatLoading.vue'
+import CardWall from './github-repos/card-wall.vue'
 
 export default {
   name: 'github-repos',
   components: {
-    ListTable,
+    CardWall,
     CatLoading
   },
   data: function () {
     return {
-      header: {
-        left: 'Repository Name',
-        right: 'Last Updated'
-      },
       items: [],
       loaded: false
     }
@@ -31,7 +27,13 @@ export default {
   mounted: function () {
     var self = this
     this.$http.get(
-      'https://api.github.com/users/Nightfeather/repos?type=all&sort=updated'
+      'https://api.github.com/users/Nightfeather/repos',
+      {
+        params: {
+          type: 'all',
+          sort: 'updated'
+        }
+      }
     ).then(
       (resp) => {
         function xmlTime (xmlString) {
