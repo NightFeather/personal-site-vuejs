@@ -2,14 +2,14 @@
 <article id="github-repos" class="region">
   <header>GitHub 最近有活動的專案</header>
   <section>
-    <card-wall v-show="this.loaded" v-bind:header="header" v-bind:items="items"></card-wall>
+    <card-wall v-show="this.loaded" v-bind:repos="repos"></card-wall>
     <cat-loading v-show="!this.loaded"></cat-loading>
   </section>
 </article>
 </template>
 
 <script>
-import CatLoading from '@/components/CatLoading.vue'
+import CatLoading from '@/components/cat-loading.vue'
 import CardWall from './github-repos/card-wall.vue'
 
 export default {
@@ -20,7 +20,7 @@ export default {
   },
   data: function () {
     return {
-      items: [],
+      repos: [],
       loaded: false
     }
   },
@@ -46,18 +46,18 @@ export default {
           return match[3] + ' ' + month[(match[2] - '') - 1] + ' ' + match[1]
         }
 
-        var items = resp.data.slice(0, 5)
-        items = items.map((item) => {
+        var repos = resp.data.slice(0, 5)
+        repos = repos.map((item) => {
           return {
-            left: {
-              href: item.html_url,
-              name: item.name
-            },
-            right: xmlTime(item.updated_at)
+            link: item.html_url,
+            name: item.name,
+            full_name: item.full_name,
+            desc: item.description,
+            updated_at: xmlTime(item.updated_at)
           }
         })
 
-        self.items = items
+        self.repos = repos
         self.loaded = true
       }
     ).catch(
