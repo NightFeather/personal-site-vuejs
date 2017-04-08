@@ -29,7 +29,7 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  font-size: 20px;
+  font-size: 18px;
   height: 100%;
 }
 </style>

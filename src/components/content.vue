@@ -39,9 +39,9 @@ export default {
       width: 100%;
       min-height: 60vh;
       padding: 1.5vh 0px 3.5vh 0px;
-      font-size: 20px;
+      font-size: 1em;
 
-      header { font-size: 2.5em; }
+      header { font-size: 2em; }
       section {
         font-size: 1.5em;
         min-height: 80%;
