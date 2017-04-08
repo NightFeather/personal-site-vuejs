@@ -80,6 +80,19 @@ export default {
           )
         })).then((res) => {
           self.repos = res.filter((i) => { return i.status === 'success' })
+                          .sort((a, b) => {
+                            if (a.updated_at && b.updated_at) {
+                              if (a.updated_at > b.updated_at) {
+                                return -1
+                              } else if (a.updated_at < b.updated_at) {
+                                return 1
+                              } else {
+                                return 0
+                              }
+                            } else {
+                              return a.updated_at ? -1 : 1
+                            }
+                          })
           self.loaded = true
         })
       }
