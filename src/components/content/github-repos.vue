@@ -33,18 +33,18 @@ export default {
       {
         params: {
           type: 'all',
-          sort: 'updated'
+          sort: 'pushed'
         }
       }
     ).then(
       (resp) => {
-        var repos = resp.data.slice(0, 9).map((repo) => {
+        var repos = resp.data.slice(0, 6).map((repo) => {
           return {
             link: repo.html_url,
             name: repo.name,
             full_name: repo.full_name,
             desc: repo.description,
-            updated_at: repo.updated_at
+            updated_at: repo.pushed_at
           }
         })
 

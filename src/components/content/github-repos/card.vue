@@ -15,7 +15,7 @@
         </li>
       </ul>
     </div>
-    <div class="updated_at"><span>Last Modified: {{repo.updated_at | xmlTime}}</span></div>
+    <div class="updated_at"><span>Last Push: {{repo.updated_at | xmlTime}}</span></div>
   </div>
 </li>
 </template>
