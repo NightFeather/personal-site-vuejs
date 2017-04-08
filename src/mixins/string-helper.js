@@ -9,6 +9,15 @@ export default {
       } else {
         return str
       }
+    },
+    xmlTime: function (xmlString) {
+      var pattern = /^([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})/i
+      var month = [
+        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+      ]
+      var match = pattern.exec(xmlString)
+      return match[3] + ' ' + month[(match[2] - '') - 1] + ' ' + match[1]
     }
   }
 }
