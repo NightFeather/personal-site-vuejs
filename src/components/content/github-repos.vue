@@ -64,6 +64,7 @@ export default {
               repo.status = 'success'
               repo.fork = res.fork
               repo.topics = res.topics
+              repo.image = '/static/GitHub-Mark-120px-plus.png'
               if (res.fork) {
                 repo.parent = {}
                 repo.parent.name = res.parent.full_name

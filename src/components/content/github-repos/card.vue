@@ -1,5 +1,5 @@
 <template>
-<li class="card">
+<li class="card" v-bind:style="{ 'background-image': 'url(' + repo.image + ')' }">
   <div class="content">
     <a target="_blank" :href="repo.link" :title="repo.name">
       <div class="title"><span>{{repo.name | truncate(28)}}</span></div>
@@ -15,7 +15,9 @@
         </li>
       </ul>
     </div>
-    <div class="updated_at"><span>Last Push: {{repo.updated_at | xmlTime}}</span></div>
+    <div class="updated_at">
+      <span>Last Push: {{repo.updated_at | xmlTime}}</span>
+    </div>
   </div>
 </li>
 </template>
@@ -31,14 +33,22 @@ export default {
 
 <style lang='scss'>
 .card {
+  position: relative;
   margin: 5px;
-  padding: 0.5em;
   width: 15em;
-  box-sizing: border-box;
+  box-sizing: padding-box;
 
-  background-color: #eee;
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+
   border-radius: 2px;
   box-shadow: 2px 2px 6px black;
+
+  background-color: #eee;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 
   font-size: 0.8em;
   text-align: left;
@@ -46,19 +56,24 @@ export default {
   p { margin: 0; padding: 0; }
 
   .content {
-
-    height: 100%;
-
     display: flex;
     flex-flow: column;
     align-items: stretch;
+
+    flex: 1;
+    padding: 0.3em 0.5em;
+
+    background-color: rgba(240,240,240,0.9);
+    background-clip: border-box;
+
+    overflow: hidden;
 
     & > * { flex: 0; }
 
     .title {
       color: black;
       font-size: 1.1em;
-      line-height: 1.1em;
+      line-height: 1.3em;
       align-self: flex-start;
     }
     .fork {
@@ -72,6 +87,8 @@ export default {
       flex: 1;
       min-height: 6em;
       font-size: 0.85em;
+      line-height: 1.1em;
+      padding: 5px 0;
     }
     .topics {
       ul {
